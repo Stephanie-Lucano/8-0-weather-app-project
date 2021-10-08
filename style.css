@@ -1,0 +1,80 @@
+body {
+    background-image: url("./assets/lucas-ludwig-unsplash-1536x1536px.jpg");
+    display: grid;
+    grid-template-columns: 8fr 5fr;
+    grid-auto-rows: 1fr 2fr;
+    grid-gap: 10px;
+    height: 100vh;
+}
+
+h1 {
+    font-family: 'Bungee Shade', cursive;
+}
+
+header {
+    grid-gap: 15px;
+    grid-column: 1 / span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+}
+
+form {
+    width: auto;
+    height: auto;
+    border: 1px solid white;
+    border-radius: 30px;
+}
+
+label, 
+#location, 
+#submit {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 23px;
+    border: none;
+    background:transparent;
+}
+
+label {
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+#location {
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+}
+
+#submit {
+    padding-right: 10px;
+}
+
+main, 
+aside {
+    font-family: 'Quicksand', sans-serif;
+    border: 1px solid white;
+    border-radius: 30px;
+    background-image: 
+    linear-gradient(to right, /*red,orange,yellow, rgb(1, 255, 1)*/blue,#9500ff/*violet*/);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;  
+    animation: move 95s linear infinite;
+}
+
+@keyframes move {
+    to {
+        background-position: 800vh;
+    }
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}   
+
+aside {
+    display: flex;
+    align-items: flex-start;
+    padding-left: 5%;
+}

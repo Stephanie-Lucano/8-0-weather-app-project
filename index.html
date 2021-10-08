@@ -6,17 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="./assets/rainbow.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <h1>Weather App</h1>
         <form>
-            <label for="location">Pick a Location</label>
-            <input id="location" name="location" type="text" />
-            <input type="submit" value="Get Weather" />
+            <label for="location">Pick a Location 🔍</label>
+            <input id="location" name="location" type="text" placeholder="Type a city" spellcheck="false" />
+            <input id="submit" type="submit" value="Get Weather" />
         </form>
     </header>
-    <main class="display"></main>
+    <main class="display">
+        <h3>Choose a location to view the weather.</h3>
+    </main>
     <aside class="history">
         <h3>Previous Searches</h3>
     </aside>
