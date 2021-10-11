@@ -6,6 +6,12 @@ document.querySelector("form").addEventListener("submit", (event) => {
     .then((response) => response.json())
     .then((result) => {
         document.querySelector("#location").value = ""
+        const sectionQuickSummary = document.querySelector(".quick-summary")
+        const sectionThreeDayForecast = document.querySelector(".three-day-forecast")
+        if (sectionQuickSummary && sectionThreeDayForecast) {
+            sectionQuickSummary.remove()
+            sectionThreeDayForecast.remove()
+        }
         document.querySelector(".display").append(quickSummary(result));
         document.querySelector(".display").append(threeDayForecast(result));
     })
@@ -28,8 +34,6 @@ function quickSummary(result) {
     section.classList.add("quick-summary")
 
     const heading = document.createElement("h2");
-
-    // const heading = document.querySelector(".display h2")
     heading.textContent = result.nearest_area[0].areaName[0].value;
     section.append(heading)
     
