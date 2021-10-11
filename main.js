@@ -5,9 +5,9 @@ document.querySelector("form").addEventListener("submit", (event) => {
     fetch(url)
     .then((response) => response.json())
     .then((result) => {
+        document.querySelector("#location").value = ""
         document.querySelector(".display").append(quickSummary(result));
         document.querySelector(".display").append(threeDayForecast(result));
-        return result
     })
     .catch((error) => {
         console.log(error)
@@ -22,12 +22,14 @@ function createHeading(description, value) {
 
 function quickSummary(result) {
     const rmHeading = document.querySelector(".display h2")
-    rmHeading.remove()
+    rmHeading.style.display = "none"
 
     const section = document.createElement("section")
     section.classList.add("quick-summary")
 
     const heading = document.createElement("h2");
+
+    // const heading = document.querySelector(".display h2")
     heading.textContent = result.nearest_area[0].areaName[0].value;
     section.append(heading)
     
