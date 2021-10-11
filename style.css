@@ -54,9 +54,13 @@ main,
 aside {
     font-family: 'Quicksand', sans-serif;
     border: 1px solid white;
-    border-radius: 30px;
+    border-radius: 30px; 
+}
+
+main h2,
+aside h2 {
     background-image: 
-    linear-gradient(to right, /*red,orange,yellow, rgb(1, 255, 1)*/blue,#9500ff/*violet*/);
+    linear-gradient(to right, /*red,orange,yellow, rgb(1, 255, 1)*/blue,#9500ff, pink, yellow/*violet*/);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;  
     animation: move 95s linear infinite;
@@ -70,7 +74,7 @@ aside {
 
 main {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
 }   
 
 aside {
