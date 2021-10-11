@@ -1,4 +1,4 @@
-document.querySelector("form").addEventListener("submit", (event) => {
+const weather = document.querySelector("form").addEventListener("submit", (event) => {
     event.preventDefault();
     const userInput = event.target.location.value
     const url = `https://wttr.in/${userInput}?format=j1`
@@ -14,6 +14,7 @@ document.querySelector("form").addEventListener("submit", (event) => {
         }
         document.querySelector(".display").append(quickSummary(result));
         document.querySelector(".display").append(threeDayForecast(result));
+        document.querySelector(".history").append(previousSearches(url, userInput, result))
     })
     .catch((error) => {
         console.log(error)
@@ -96,4 +97,30 @@ function threeDayForecast(result) {
     section.append(minTemperature3)
     
     return section;
+}
+
+function previousSearches(url, userInput, result) {
+    const section = document.createElement("section")
+    section.classList.add("item$")
+
+    const unorderedList = document.createElement("ul");
+    section.append(unorderedList)
+
+    const listItem = document.createElement("li")
+    unorderedList.append(listItem)
+
+    const link = document.createElement("a")
+    listItem.append(link)
+
+    link.setAttribute("href", "#");
+    link.textContent = `${userInput}`
+
+    const textNode = document.createTextNode(` - ${result.current_condition[0].FeelsLikeF}°F`)
+    link.after(textNode)
+
+    link.addEventListener("click", () => {
+        return weather
+    })
+    
+    return section
 }
