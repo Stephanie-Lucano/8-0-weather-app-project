@@ -1,4 +1,4 @@
-const weather = document.querySelector("form").addEventListener("submit", (event) => {
+document.querySelector("form").addEventListener("submit", (event) => {
     event.preventDefault();
     const userInput = event.target.location.value
     const url = `https://wttr.in/${userInput}?format=j1`
@@ -119,8 +119,24 @@ function previousSearches(url, userInput, result) {
     link.after(textNode)
 
     link.addEventListener("click", () => {
-        return weather
-    })
+        // const url = `https://wttr.in/${userInput}?format=j1`
+        fetch(url)
+        .then((response) => response.json())
+        .then((result) => {
+            document.querySelector("#location").value = ""
+            const sectionQuickSummary = document.querySelector(".quick-summary")
+            const sectionThreeDayForecast = document.querySelector(".three-day-forecast")
+            if (sectionQuickSummary && sectionThreeDayForecast) {
+                sectionQuickSummary.remove()
+                sectionThreeDayForecast.remove()
+            }
+            document.querySelector(".display").append(quickSummary(result));
+            document.querySelector(".display").append(threeDayForecast(result));
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+        })
     
     return section
 }
