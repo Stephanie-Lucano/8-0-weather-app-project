@@ -2,9 +2,10 @@ body {
     background-image: url("./assets/lucas-ludwig-unsplash-1536x1536px.jpg");
     display: grid;
     grid-template-columns: 8fr 5fr;
-    grid-auto-rows: 1fr 2fr;
+    grid-auto-rows: 1fr 3fr;
     grid-gap: 10px;
     height: 100vh;
+    padding: 10px;
 }
 
 h1 {
@@ -17,7 +18,7 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
 }
 
 form {
@@ -34,6 +35,7 @@ label,
     font-size: 23px;
     border: none;
     background:transparent;
+    height: 40px;
 }
 
 label {
